@@ -32,6 +32,10 @@ int main()
         {
             updateCovid(cRegion, index);
         }
+        else if(menu == 4)
+        {
+            deleteCovid(cRegion,index);
+        }
     }
     return 0;
 }
