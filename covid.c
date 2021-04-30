@@ -16,7 +16,7 @@ int selectMenu()
     printf("7. 확진자 수 검색\n");
     printf("8. 날짜 검색\n");
     printf("9. 완치자 수 검색\n");
-    printf("0. 종료");
+    printf("0. 종료\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
     return menu;
