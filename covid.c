@@ -101,6 +101,7 @@ int deleteCovid(covid** c, int count)
         {
             free(c[no]);
             c[no] = NULL;
+            printf("=> 삭제됨!\n");
             return 1;
         }
     }
