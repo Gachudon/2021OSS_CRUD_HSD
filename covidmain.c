@@ -19,7 +19,11 @@ int main()
             printf("데이터가 없습니다!\n");
             continue;
         }
-        if(menu == 2){
+        else if(menu == 1)
+        {
+            listCovid(cRegion, index);
+        }
+        else if(menu == 2){
             count += addCovid(cRegion[index++]);
         }
     }
