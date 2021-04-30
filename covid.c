@@ -107,3 +107,121 @@ int deleteCovid(covid** c, int count)
     }
     return 0;
 }
+
+void searchCovidByName(covid **c, int count){
+    int scnt = 0;
+    char search[20];
+
+    printf("검색할 지역명은?");
+    scanf("%s", search);
+
+    printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
+    printf("============================================\n");
+    for(int i = 0; i <count; i++){
+        if(c[i] == NULL)continue;
+        if(strstr(c[i]->name, search)){
+            printf("%2d", i+1);
+            readCovid(c[i]);
+            scnt++;
+        }
+    }
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+}
+
+void searchCovidByConfirm(covid **c, int count){
+    int scnt = 0;
+    int search = 0;
+
+    printf("검색할 확진자 수는?");
+    scanf("%d", search);
+
+    printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
+    printf("============================================\n");
+    for(int i = 0; i <count; i++){
+        if(c[i] == NULL)continue;
+        if(c[i]->confirm==search){
+            printf("%2d", i+1);
+            readCovid(c[i]);
+            scnt++;
+        }
+    }
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+}
+
+void searchCovidByDate(covid **c, int count){
+    int scnt = 0;
+    int search = 0;
+
+    printf("검색할 마지막 확진자 발생날짜는?");
+    scanf("%d", search);
+
+    printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
+    printf("============================================\n");
+    for(int i = 0; i <count; i++){
+        if(c[i] == NULL)continue;
+        if(c[i]->date==search){
+            printf("%2d", i+1);
+            readCovid(c[i]);
+            scnt++;
+        }
+    }
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+}
+
+void searchCovidByHealer(covid **c, int count){
+    int scnt = 0;
+    int search = 0;
+
+    printf("검색할 완치자 수는?");
+    scanf("%d", search);
+
+    printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
+    printf("============================================\n");
+    for(int i = 0; i <count; i++){
+        if(c[i] == NULL)continue;
+        if(c[i]->healer==search){
+            printf("%2d", i+1);
+            readCovid(c[i]);
+            scnt++;
+        }
+    }
+    if(scnt == 0) printf("=> 검색된 데이터 없음!");
+    printf("\n");
+}
+
+int loadData(covid **c){
+    int count = 0,  i = 0;
+    FILE *fp;
+    fp = fopen("covid.txt", "rt");
+    if(fp==NULL){
+      printf("=>파일 없음\n");
+      return 0;
+    }
+    else{
+      for(; i<165; i++){
+          fscanf(fp, "%s", c[i]->name);
+          if(feof(fp))break;
+          fscanf(fp, "%d", &c[i]->confirm);
+          fscanf(fp, "%d", &c[i]->date);
+          fscanf(fp, "%d", &c[i]->healer);
+      }
+    printf("=> 로딩 성공!\n");
+    return i;
+    }
+    fclose(fp);
+}
+
+void saveData(covid **c, int count){
+    FILE *fp;
+    fp = fopen("covid.txt", "wt");
+
+    for (int i = 0; i<count; i++){
+        if(c[i] == NULL)continue;
+        fprintf(fp, "%s %d %d %d\n", c[i]->name, c[i]->confirm, c[i]->date, c[i]->healer);
+    }
+    fclose(fp);
+    printf("=> 저장됨!\n");
+}

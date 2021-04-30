@@ -10,6 +10,9 @@ int main()
     int index = 0;
     int count = 0, menu;
 
+    count = loadData(cRegion);
+    index = count;
+
     while(1)
     {
         menu = selectMenu();
@@ -35,6 +38,26 @@ int main()
         else if(menu == 4)
         {
             deleteCovid(cRegion,index);
+        }
+        else if(menu == 5)
+        {
+            saveData(cRegion, index);
+        }
+        else if(menu == 6)
+        {
+            searchCovidByName(cRegion, index);
+        }
+        else if(menu == 7)
+        {
+            searchCovidByConfirm(cRegion, index);
+        }
+        else if(menu == 8)
+        {
+            searchCovidByDate(cRegion, index);
+        }
+        else if(menu == 9)
+        {
+            searchCovidByHealer(cRegion, index);
         }
     }
     return 0;
