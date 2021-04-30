@@ -11,4 +11,4 @@ void listCovid(covid**, int);    // 데이터 나열
 void readCovid(covid*);         // 데이터 조회
 int selectDataNo(covid**,int);    // 데이터 선택
 int updateCovid(covid**, int);        // 데이터 수정
-int deleteCovid(covid*);        // 데이터 삭제
+int deleteCovid(covid**, int);        // 데이터 삭제
