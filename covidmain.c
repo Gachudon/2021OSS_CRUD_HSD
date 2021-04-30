@@ -24,6 +24,7 @@ int main()
             listCovid(cRegion, index);
         }
         else if(menu == 2){
+            cRegion[index] = (covid*)malloc(sizeof(covid));
             count += addCovid(cRegion[index++]);
         }
     }
