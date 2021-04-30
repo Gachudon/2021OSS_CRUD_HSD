@@ -28,6 +28,10 @@ int main()
             cRegion[index] = (covid*)malloc(sizeof(covid));
             count += addCovid(cRegion[index++]);
         }
+        else if(menu == 3)
+        {
+            updateCovid(cRegion, index);
+        }
     }
     return 0;
 }
