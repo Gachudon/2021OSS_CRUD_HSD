@@ -27,4 +27,5 @@ int main()
             count += addCovid(cRegion[index++]);
         }
     }
+    return 0;
 }
