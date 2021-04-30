@@ -24,7 +24,6 @@ int selectMenu()
 
 int addCovid(covid* covid)
 {
-    covid = malloc(sizeof(covid));
     printf("지역이름은? ");
     scanf("%s", covid->name);
     printf("확진자 수는? ");
