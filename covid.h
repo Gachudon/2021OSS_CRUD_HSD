@@ -1,11 +1,11 @@
 typedef struct{
-    char name[20];  // Áö¿ªÀÌ¸§
-    int confirm;    // È®ÁøÀÚ ¼ö
-    int date;       // ¸¶Áö¸· È®Áø³¯Â¥ // format: yyyymmdd
-    int healer;     // ¿ÏÄ¡ÀÚ ¼ö
+    char name[20];  // ì§€ì—­ì´ë¦„
+    int confirm;    // í™•ì§„ì ìˆ˜
+    int date;       // ë§ˆì§€ë§‰ í™•ì§„ì ë‚ ì§œ // format: yyyymmdd
+    int healer;     // ì™„ì¹˜ì ìˆ˜
 } covid;
 
-int addCovid(covid*);       //µ¥ÀÌÅÍ Ãß°¡
-void readCovid(covid*);     //µ¥ÀÌÅÍ Á¶È¸
-int updateCovid(covid*);    //µ¥ÀÌÅÍ ¼öÁ¤
-int deleteCovid(covid*);    //µ¥ÀÌÅÍ »èÁ¦
+int addCovid(covid*);       // ë°ì´í„° ì¶”ê°€
+void readCovid(covid*);     // ë°ì´í„° ì¡°íšŒ
+int updateCovid(covid*);    // ë°ì´í„° ìˆ˜ì •
+int deleteCovid(covid*);    // ë°ì´í„° ì‚­ì œ
