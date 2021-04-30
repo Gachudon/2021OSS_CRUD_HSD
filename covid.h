@@ -7,7 +7,7 @@ typedef struct{
 
 int selectMenu();               // 메뉴 선택
 int addCovid(covid*);           // 데이터 추가
-void listCovid(covid*, int);    // 데이터 나열
+void listCovid(covid**, int);    // 데이터 나열
 void readCovid(covid*);         // 데이터 조회
 int selectDataNo(covid*,int);    // 데이터 선택
 int updateCovid(covid*);        // 데이터 수정

@@ -35,3 +35,20 @@ int addCovid(covid* covid)
     scanf("%d", &covid->healer);
     return 1;
 }
+
+void readCovid(covid* covid)
+{
+    printf("%s %5d %08d %5d\n", covid->name, covid->confirm, covid->date, covid->healer);
+}
+
+void listCovid(covid** covid, int count)
+{
+    printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
+    printf("============================================\n");
+    for(int i = 0; i < count; i++)
+    {
+        if(covid[i] == NULL) continue;
+        printf("%2d.",i+1);
+        readCovid(covid[i]);
+    }
+}
