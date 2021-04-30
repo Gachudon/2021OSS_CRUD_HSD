@@ -91,11 +91,18 @@ int updateCovid(covid** c, int count)
 int deleteCovid(covid** c, int count)
 {
     int no = selectDataNo(c, count);
+    int isdel = 0;
     if(no == -1) return 0;
     else
     {
-        free(c[no]);
-        c[no] = NULL;
-        return 1;
+        printf("정말 삭제하시겠습니까(1: 실행)? ");
+        scanf("%d", &isdel);
+        if(isdel == 1)
+        {
+            free(c[no]);
+            c[no] = NULL;
+            return 1;
+        }
     }
+    return 0;
 }
