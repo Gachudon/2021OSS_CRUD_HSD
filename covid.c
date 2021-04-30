@@ -22,40 +22,40 @@ int selectMenu()
     return menu;
 }
 
-int addCovid(covid* covid)
+int addCovid(covid* c)
 {
     printf("지역이름은? ");
-    scanf("%s", covid->name);
+    scanf("%s", c->name);
     printf("확진자 수는? ");
-    scanf("%d", &covid->confirm);
+    scanf("%d", &c->confirm);
     printf("마지막 확진자 날짜는(형식: yyyymmdd)? ");
-    scanf("%d", &covid->date);
+    scanf("%d", &c->date);
     printf("완치자 수는? ");
-    scanf("%d", &covid->healer);
+    scanf("%d", &c->healer);
     return 1;
 }
 
-void readCovid(covid* covid)
+void readCovid(covid* c)
 {
-    printf("%s %5d %08d %5d\n", covid->name, covid->confirm, covid->date, covid->healer);
+    printf("%s %5d %08d %5d\n", c->name, c->confirm, c->date, c->healer);
 }
 
-void listCovid(covid** covid, int count)
+void listCovid(covid** c, int count)
 {
     printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
     printf("============================================\n");
     for(int i = 0; i < count; i++)
     {
-        if(covid[i] == NULL) continue;
+        if(c[i] == NULL) continue;
         printf("%2d.",i+1);
-        readCovid(covid[i]);
+        readCovid(c[i]);
     }
 }
 
-int selectDataNo(covid** covid, int count)
+int selectDataNo(covid** c, int count)
 {
     int no;
-    listCovid(covid, count);
+    listCovid(c, count);
     printf("번호는 (0:취소)? ");
     scanf("%d%*c",&no);
     if(no == 0)
@@ -69,33 +69,33 @@ int selectDataNo(covid** covid, int count)
     }
 }
 
-int updateCovid(covid** covid, int count)
+int updateCovid(covid** c, int count)
 {
-    int no = selectDataNo(covid, count);
+    int no = selectDataNo(c, count);
     if(no == -1) return 0;
     else
     {
         printf("지역이름은? ");
-        scanf("%s", covid[no]->name);
+        scanf("%s", c[no]->name);
         printf("확진자 수는? ");
-        scanf("%d", &covid[no]->confirm);
+        scanf("%d", &c[no]->confirm);
         printf("마지막 확진자 날짜는(형식: yyyymmdd)? ");
-        scanf("%d", &covid[no]->date);
+        scanf("%d", &c[no]->date);
         printf("완치자 수는? ");
-        scanf("%d", &covid[no]->healer);
+        scanf("%d", &c[no]->healer);
         printf("=> 수정 성공!\n");
         return 1;
     }
 }
 
-int deleteCovid(covid** covid, int count)
+int deleteCovid(covid** c, int count)
 {
-    int no = selectDataNo(covid, count);
+    int no = selectDataNo(c, count);
     if(no == -1) return 0;
     else
     {
-        free(covid[no]);
-        covid = NULL;
+        free(c[no]);
+        c[no] = NULL;
         return 1;
     }
 }
