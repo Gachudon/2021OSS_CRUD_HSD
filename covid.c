@@ -72,10 +72,7 @@ int selectDataNo(covid** covid, int count)
 int updateCovid(covid** covid, int count)
 {
     int no = selectDataNo(covid, count);
-    if(no == -1)
-    {
-        return 0;
-    }
+    if(no == -1) return 0;
     else
     {
         printf("지역이름은? ");
@@ -88,5 +85,16 @@ int updateCovid(covid** covid, int count)
         scanf("%d", &covid[no]->healer);
         printf("=> 수정 성공!\n");
         return 1;
+    }
+}
+
+int deleteCovid(covid** covid, int count)
+{
+    int no = selectDataNo(covid, count);
+    if(no == -1) return 0;
+    else
+    {
+        free(covid[no]);
+        covid = NULL;
     }
 }
