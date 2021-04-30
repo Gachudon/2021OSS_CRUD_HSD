@@ -21,4 +21,15 @@ int selectMenu()
     return menu;
 }
 
-int addCovid
+int addCovid(covid* covid)
+{
+    printf("지역이름은? ");
+    scanf("%s", covid->name);
+    printf("확진자 수는? ");
+    scanf("%d", &covid->confirm);
+    printf("마지막 확진자 날짜는(형식: yyyymmdd)? ");
+    scanf("%d", &covid->date);
+    printf("완치자 수는? ");
+    scanf("%d", &covid->healer);
+    return 1;
+}
