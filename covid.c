@@ -96,5 +96,6 @@ int deleteCovid(covid** covid, int count)
     {
         free(covid[no]);
         covid = NULL;
+        return 1;
     }
 }
