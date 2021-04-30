@@ -7,17 +7,18 @@ int selectMenu()
 {
     int menu;
     printf("\n***covid-19***\n");
-    printf("1. Á¶È¸\n");
-    printf("2. Ãß°¡\n");
-    printf("3. ¼öÁ¤\n");
-    printf("4. »èÁ¦\n");
-    printf("5. ÀúÀå\n");
-    printf("6. Áö¿ªÀÌ¸§ °Ë»ö\n");
-    printf("7. È®ÁøÀÚ ¼ö °Ë»ö\n");
-    printf("8. ³¯Â¥°Ë»ö\n");
-    printf("9. ¿ÏÄ¡ÀÚ ¼ö °Ë»ö\n");
-    printf("=> ¿øÇÏ´Â ¸Ş´º´Â? ");
+    printf("1. ì¡°íšŒ\n");
+    printf("2. ì¶”ê°€\n");
+    printf("3. ìˆ˜ì •\n");
+    printf("4. ì‚­ì œ\n");
+    printf("5. ì €ì¥\n");
+    printf("6. ì§€ì—­ì´ë¦„ ê²€ìƒ‰\n");
+    printf("7. í™•ì§„ì ìˆ˜ ê²€ìƒ‰\n");
+    printf("8. ë‚ ì§œ ê²€ìƒ‰\n");
+    printf("9. ì™„ì¹˜ì ìˆ˜ ê²€ìƒ‰\n");
+    printf("=> ì›í•˜ëŠ” ë©”ë‰´ëŠ”? ");
     scanf("%d", &menu);
+    return menu;
 }
 
 int addCovid
