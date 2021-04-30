@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "covid.h"
 #define SIZE 165
 
