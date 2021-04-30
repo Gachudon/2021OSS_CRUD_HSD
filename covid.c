@@ -51,3 +51,42 @@ void listCovid(covid** covid, int count)
         readCovid(covid[i]);
     }
 }
+
+int selectDataNo(covid** covid, int count)
+{
+    int no;
+    listCovid(covid, count);
+    printf("번호는 (0:취소)? ");
+    scanf("%d%*c",&no);
+    if(no == 0)
+    {
+        printf("=> 취소됨!\n");
+        return -1;
+    }
+    else
+    {
+        return no-1;
+    }
+}
+
+int updateCovid(covid** covid, int count)
+{
+    int no = selectDataNo(covid, count);
+    if(no == -1)
+    {
+        return 0;
+    }
+    else
+    {
+        printf("지역이름은? ");
+        scanf("%s", covid[no]->name);
+        printf("확진자 수는? ");
+        scanf("%d", &covid[no]->confirm);
+        printf("마지막 확진자 날짜는(형식: yyyymmdd)? ");
+        scanf("%d", &covid[no]->date);
+        printf("완치자 수는? ");
+        scanf("%d", &covid[no]->healer);
+        printf("=> 수정 성공!\n");
+        return 1;
+    }
+}
