@@ -133,14 +133,14 @@ void searchCovidByConfirm(covid **c, int count){
     int scnt = 0;
     int search = 0;
 
-    printf("검색할 확진자 수는?");
+    printf("검색할 확진자 수는? (오차범위 500명)");
     scanf("%d", search);
 
     printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
     printf("============================================\n");
     for(int i = 0; i <count; i++){
         if(c[i] == NULL)continue;
-        if(c[i]->confirm==search){
+        if((c[i]->confirm<=(search+500))&&(c[i]->confirm>=(search-500))){
             printf("%2d", i+1);
             readCovid(c[i]);
             scnt++;
@@ -154,14 +154,14 @@ void searchCovidByDate(covid **c, int count){
     int scnt = 0;
     int search = 0;
 
-    printf("검색할 마지막 확진자 발생날짜는?");
+    printf("검색할 마지막 확진자 발생날짜는? (오차범위 1달)");
     scanf("%d", search);
 
     printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
     printf("============================================\n");
     for(int i = 0; i <count; i++){
         if(c[i] == NULL)continue;
-        if(c[i]->date==search){
+        if((c[i]->date<=(search+100))&&(c[i]->date>=(search-100))){
             printf("%2d", i+1);
             readCovid(c[i]);
             scnt++;
@@ -175,14 +175,14 @@ void searchCovidByHealer(covid **c, int count){
     int scnt = 0;
     int search = 0;
 
-    printf("검색할 완치자 수는?");
+    printf("검색할 완치자 수는? (오차범위 500명)");
     scanf("%d", search);
 
     printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
     printf("============================================\n");
     for(int i = 0; i <count; i++){
         if(c[i] == NULL)continue;
-        if(c[i]->healer==search){
+        if((c[i]->healer<=(search+500))&&(c[i]->healer>=(search-500))){
             printf("%2d", i+1);
             readCovid(c[i]);
             scnt++;
