@@ -113,7 +113,7 @@ void searchCovidByName(covid **c, int count){
     char search[20];
 
     printf("검색할 지역명은?");
-    scanf("%s", search);
+    scanf("%s", &search);
 
     printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
     printf("============================================\n");
@@ -134,7 +134,7 @@ void searchCovidByConfirm(covid **c, int count){
     int search = 0;
 
     printf("검색할 확진자 수는?");
-    scanf("%d", search);
+    scanf("%d", &search);
 
     printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
     printf("============================================\n");
@@ -155,7 +155,7 @@ void searchCovidByDate(covid **c, int count){
     int search = 0;
 
     printf("검색할 마지막 확진자 발생날짜는?");
-    scanf("%d", search);
+    scanf("%d", &search);
 
     printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
     printf("============================================\n");
@@ -176,7 +176,7 @@ void searchCovidByHealer(covid **c, int count){
     int search = 0;
 
     printf("검색할 완치자 수는?");
-    scanf("%d", search);
+    scanf("%d", &search);
 
     printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
     printf("============================================\n");
