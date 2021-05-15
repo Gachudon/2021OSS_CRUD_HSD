@@ -1,5 +1,7 @@
 CC = gcc
-cinquiry.exe : covidmain.c covid.o
+teamP : covidmain.c covid.o
+	$(CC) -o $@ $^
+teamP.exe : covidmain.c covid.o
 	$(CC) -o $@ $^
 covid.o : covid.c
 	$(CC) -c $^
