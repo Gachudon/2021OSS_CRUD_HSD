@@ -193,26 +193,24 @@ void searchCovidByHealer(covid **c, int count){
 }
 
 int loadData(covid **c){
-    int count = 0,  i = 0;
     FILE *fp;
     fp = fopen("covid.txt", "rt");
     if(fp==NULL){
       printf("=>파일 없음\n");
       return 0;
     }
-    else{
-      for(; i<165; i++){
-          fscanf(fp, "%s", c[i]->name);
-          if(feof(fp))break;
-          fscanf(fp, "%d", &c[i]->confirm);
-          fscanf(fp, "%d", &c[i]->date);
-          fscanf(fp, "%d", &c[i]->healer);
-      }
+    int i = 0;
+	while(!feof(fp))
+	{
+		c[i] = (covid*)malloc(sizeof(covid));
+		fscanf(fp, "%s %d %d %d\n",c[i]->name, &c[i]->confirm, &c[i]->date, &c[i]->healer);
+		i++;
+	}
     printf("=> 로딩 성공!\n");
-    return i;
-    }
-    fclose(fp);
+	fclose(fp);
+    return i-1;
 }
+
 
 void saveData(covid **c, int count){
     FILE *fp;
