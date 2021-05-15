@@ -37,7 +37,7 @@ int addCovid(covid* c)
 
 void readCovid(covid* c)
 {
-    printf("%s %5d %08d %5d\n", c->name, c->confirm, c->date, c->healer);
+    printf(" %8s %9d %14d %9d\n", c->name, c->confirm, c->date, c->healer);
 }
 
 void listCovid(covid** c, int count)
