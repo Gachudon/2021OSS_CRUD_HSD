@@ -113,7 +113,7 @@ void searchCovidByName(covid **c, int count){
     char search[20];
 
     printf("검색할 지역명은?");
-    scanf("%s", &search);
+    scanf("%s", search);
 
     printf("\nNo. 지역이름 확진자 수 마지막확진날짜 완치자 수\n");
     printf("============================================\n");
